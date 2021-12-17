@@ -36,3 +36,13 @@ class Graph:
     def reset_neighbour_tuples(self):
         for node in self.node_list:
             node.reset_neighbour_color_tuple()
+
+    def one_wl_equivalence(self):
+        g1_colors = [x.get_color() for x in self.node_list[0: len(self.node_list)//2]]
+        g2_colors = [x.get_color() for x in self.node_list[len(self.node_list)//2:]]
+
+        if g1_colors == g2_colors:
+            print("Graphs are 1-WL equivalent!")
+        else:
+            print("Graphs are not 1-WL equivalent. :(")
+        return
